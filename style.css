@@ -1,0 +1,199 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+    width: 0.6rem; /* Ancho de la barra */
+    
+    }
+::-webkit-scrollbar-track {
+    background: silver !important; /* Color de fondo de la barra de desplazamiento */
+    }
+::-webkit-scrollbar-thumb {
+        background: linear-gradient(transparent,#0F69B4 ) !important;
+        border-radius:4rem !important;
+        height:3rem !important;
+        }
+
+:root {
+    --bg-color: #f0f0f0;
+    --text-color: #333;
+    --button-bg: #0F69B4;
+    --button-text: #fff;
+    --hover-bg: #0c5690;
+  
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+   
+    margin-top:3rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Merriweather', serif; /* <-- ¡Asegúrate de que diga 'Merriweather' y 'serif'! */
+    
+    padding: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh; /* ocupa al menos toda la pantalla */
+}
+
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #f0f0f0;
+    --button-bg: #0F69B4;
+    --button-text: #fff;
+    --hover-bg: #0a4f86;
+}
+main {
+  flex: 1; /* hace que el contenido empuje al footer */
+}
+h1{
+  text-align: center;
+}
+
+#theme-toggle {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.resource-button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    padding: 30px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.resource-button:hover {
+    background-color: var(--hover-bg);
+    transform: translateY(-5px); /* Pequeña animación de elevación al pasar el ratón */
+}
+
+.resource-button i {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.hero-video {
+    width: 100%;
+    max-width: 500px; /* Ajusta este valor si quieres un tamaño máximo diferente */
+    display: block;
+    margin: 20px auto; /* Centra el video */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+
+
+/* --- Estilos para el Toggle Switch de Modo Oscuro --- */
+
+.toggle-switch {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.toggle-label {
+    display: block;
+    width: 50px;
+    height: 26px;
+    background-color: #ccc;
+    border-radius: 13px;
+    
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toggle-label::before {
+    content: '';
+    display: block;
+    width: 22px;
+    height: 22px;
+    background-color: #004677;
+    border-radius: 50%;
+    position: relative;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s;
+}
+
+.checkbox {
+    display: none;
+}
+
+.checkbox:checked + .toggle-label {
+    background-color: #0F69B4;
+}
+
+.checkbox:checked + .toggle-label::before {
+    transform: translateX(24px);
+}
+
+/* --- Estilos para el Footer y el Espacio --- */
+
+/* Estilos para el Footer */
+.main-footer {
+  width: 100%;
+  background-color: transparent;
+  color: #222;
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 0.5rem;
+  border-top: 2px solid #ccc;
+}
+
+
+footer{
+    width: 100%;
+    border: none;
+}
+
+/* Estilos para el footer en modo oscuro */
+body.dark-mode .main-footer {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    border-top: 1px solid #777; /* Color de línea más claro para el modo oscuro */
+}
+.linea{
+  border-top: 2px solid #0F69B4;
+  margin-bottom: 20px;
+  width: 94%;
+}
+
+
+body.dark-mode .linea {
+    border-top: 1px solid #777; /* Color de línea más claro para el modo oscuro */
+}
